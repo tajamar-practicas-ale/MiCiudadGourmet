@@ -1,36 +1,37 @@
-*.log
-.DS_Store
+# Entornos y archivos de entorno
 .env
-.env.backup
-.env.production
-.phpactor.json
-.phpunit.result.cache
-/.fleet
-/.idea
-/.nova
-/.phpunit.cache
-/.vscode
-/.zed
-/auth.json
-/node_modules
+.env.*            # cualquier backup o entorno distinto
+auth.json
+
+# Logs y cachés
+*.log
+npm-debug.log*
+yarn-error.log*
+storage/logs/*
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+
+# Dependencias
+/vendor/
+/node_modules/
+
+# Builds y artefactos
 /public/build
 /public/hot
 /public/storage
-/storage/*.key
-/storage/pail
-/vendor
-Homestead.json
-Homestead.yaml
-npm-debug.log
+
+# IDEs y editores
+/.idea/
+/.vscode/
+/fleet/
+/zed/
+/Homestead.json
+/Homestead.yaml
+
+# S.O. y otros
+.DS_Store
 Thumbs.db
-yarn-error.log
-/vendor
-/node_modules
-.env
-*.log
-/storage/*.key
-/storage/app/public
-/storage/framework/cache/*
-/storage/framework/sessions/*
-/storage/framework/views/*
-/storage/logs/*
+
+# Llaves y ficheros sensibles
+storage/*.key
