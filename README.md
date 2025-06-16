@@ -10,7 +10,8 @@ Instalar Composer globalmente:
 `curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer`
 
 Clonar el repositorio y acceder a la carpeta:  
-```.env
+```.bash
+cd /var/www/
 git clone https://github.com/tajamar-practicas-ale/MiCiudadGourmet.git  
 cd MiCiudadGourmet
 ```
