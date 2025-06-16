@@ -85,3 +85,4 @@ El esquema de la base de datos está definido en el archivo [`infrastructure/sch
 
 - `/infrastructure/infras.conf`: configuración de Apache.  
 - `/infrastructure/schema.dbml`: definición del modelo entidad-relación (ER) en DBML.
+- `/infrastructure/backup_restaurant_directory.sql`: backup de la base de datos.
