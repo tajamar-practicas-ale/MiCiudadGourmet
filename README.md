@@ -39,6 +39,8 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'tu_contr
 FLUSH PRIVILEGES;  
 EXIT;
 ```
+Restaurar backup:  
+`mysql -u tu_usuario_mysql -p restaurant_directory < infrastructure/backup_restaurant_directory.sql`
 
 Generar la clave de aplicación Laravel:  
 `php artisan key:generate`
