@@ -18,6 +18,7 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
+    // Campos asignados
     protected $fillable = [
         'name',
         'email',
@@ -39,11 +40,35 @@ class User extends Authenticatable
      *
      * @return array<string, string>
      */
+    // Casts automáicos
     protected function casts(): array
     {
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    /* -----------------------------------------------------------------
+     | Relaciones
+     -------------------------------------------------------------------*/
+
+    // Un usuario crea muchos restaurantes  (FK restaurants.user_id)
+    public function restaurants()
+    {
+        return $this->hasMany(Restaurant::class);
+    }
+
+    // Un usuario marca muchos restaurantes como favoritos (tabla pivote "favorites")
+    public function favorites()
+    {
+        return $this->belongsToMany(Restaurant::class, 'favorites')
+                    ->withTimestamps();
+    }
+
+    // Un usuario escribe muchas reseñas  (FK reviews.user_id)
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
     }
 }
