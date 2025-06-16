@@ -65,3 +65,20 @@ sudo a2dissite 000-default.conf
 sudo systemctl reload apache2
 ```
 El proyecto debería estar accesible desde el navegador apuntando al dominio o IP configurados en Apache.
+
+## Modelo de datos (Diagrama ER)
+
+El esquema de la base de datos está definido en el archivo [`infrastructure/schema.dbml`](./infrastructure/schema.dbml). Este archivo contiene la definición en formato DBML para usar en [dbdiagram.io](https://dbdiagram.io) y otras herramientas compatibles.
+
+### Cómo visualizar el diagrama
+
+1. Accede a [dbdiagram.io](https://dbdiagram.io).  
+2. Importa el archivo `schema.dbml` ubicado en la carpeta `infrastructure` del proyecto.  
+3. Visualiza y edita el diagrama según necesites.
+
+---
+
+## Organización del proyecto
+
+- `/infrastructure/infras.conf`: configuración de Apache.  
+- `/infrastructure/schema.dbml`: definición del modelo entidad-relación (ER) en DBML.
