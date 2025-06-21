@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Exception;
 
+// Form Requests
+use App\Http\Requests\StoreRestaurantRequest;
+use App\Http\Requests\UpdateRestaurantRequest;
+
 class RestaurantController extends Controller
 {
     // GET /api/restaurants
@@ -21,16 +25,10 @@ class RestaurantController extends Controller
     }
 
     // POST /api/restaurants
-    public function store(Request $request)
+    public function store(StoreRestaurantRequest $request)
     {
         // 1. Validar datos de entrada
-        $data = $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'address' => 'required|string|max:255',
-            'category_ids' => 'array',
-            'category_ids.*' => 'exists:categories,id',
-        ]);
+        $data = $request->validated();
 
         try {
             // 2. Crear restaurante vinculado al usuario autenticado
@@ -60,15 +58,9 @@ class RestaurantController extends Controller
     }
 
     // PUT /api/restaurants/{id}
-    public function update(Request $request, $id)
+    public function update(UpdateRestaurantRequest $request, $id)
     {
-        $data = $request->validate([
-            'name' => 'sometimes|required|string|max:255',
-            'description' => 'nullable|string',
-            'address' => 'sometimes|required|string|max:255',
-            'category_ids' => 'array',
-            'category_ids.*' => 'exists:categories,id',
-        ]);
+	$data = $request->validated();
 
         try {
             $restaurant = Restaurant::findOrFail($id);

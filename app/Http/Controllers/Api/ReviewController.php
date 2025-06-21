@@ -10,17 +10,18 @@ use App\Models\Review;
 use App\Models\Favorite;
 use App\Models\Photo;
 
+// Form Request
+use App\Http\Requests\StoreReviewRequest;
+use App\Http\Requests\UpdateReviewRequest;
+
 class ReviewController extends Controller
 {
     
     use AuthorizesRequests;
 
-    public function store(Request $request, $restaurantId)
+    public function store(StoreReviewRequest $request, $restaurantId)
     {
-        $data = $request->validate([
-            'rating' => 'required|integer|min:1|max:5',
-            'comment' => 'nullable|string',
-        ]);
+        $data = $request->validated();
 
         $data['user_id'] = $request->user()->id;
         $data['restaurant_id'] = $restaurantId;
@@ -30,15 +31,12 @@ class ReviewController extends Controller
         return response()->json(['success' => true, 'data' => $review], 201);
     }
 
-    public function update(Request $request, $id)
+    public function update(UpdateReviewRequest $request, $id)
     {
         $review = Review::findOrFail($id);
         $this->authorize('update', $review);
 
-        $data = $request->validate([
-            'rating' => 'sometimes|integer|min:1|max:5',
-            'comment' => 'nullable|string',
-        ]);
+        $data = $request->validated();
 
         $review->update($data);
 

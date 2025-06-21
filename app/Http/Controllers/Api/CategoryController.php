@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Exception;
 
+// Form Requests
+use App\Http\Requests\StoreCategoryRequest;
+use App\Http\Requests\UpdateCategoryRequest;
+
 class CategoryController extends Controller
 {
     // GET /api/categories
@@ -18,11 +22,9 @@ class CategoryController extends Controller
     }
 
     // POST /api/categories
-    public function store(Request $request)
+    public function store(StoreCategoryRequest $request)
     {
-        $data = $request->validate([
-            'name' => 'required|string|unique:categories,name|max:255',
-        ]);
+        $data = $request->validated();
 
         try {
             $category = Category::create($data);
@@ -33,11 +35,9 @@ class CategoryController extends Controller
     }
 
     // PUT /api/categories/{id}
-    public function update(Request $request, $id)
+    public function update(UpdateCategoryRequest $request, $id)
     {
-        $data = $request->validate([
-            'name' => 'required|string|unique:categories,name,' . $id . '|max:255',
-        ]);
+        $data = $request->validated();
 
         try {
             $category = Category::findOrFail($id);
