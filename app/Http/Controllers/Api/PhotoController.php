@@ -9,13 +9,14 @@ use App\Models\Review;
 use App\Models\Favorite;
 use App\Models\Photo;
 
+// Form Requests
+use App\Http\Requests\StorePhotoRequest;
+
 class PhotoController extends Controller
 {
-    public function store(Request $request, $restaurantId)
+    public function store(StorePhotoRequest $request, $restaurantId)
     {
-        $data = $request->validate([
-            'url' => 'required|url',
-        ]);
+        $data = $request->validated();
 
         $photo = Photo::create([
             'restaurant_id' => $restaurantId,
