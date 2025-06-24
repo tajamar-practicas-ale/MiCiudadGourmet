@@ -1,12 +1,39 @@
-# React + Vite
+# MiCiudadGourmet - Frontend React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend del proyecto **MiCiudadGourmet**, desarrollado en React, que consume las APIs del backend Laravel para ofrecer una experiencia completa en la gestión y visualización de restaurantes, categorías, reseñas y favoritos.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Requisitos
 
-## Expanding the ESLint configuration
+- Node.js v16+  
+- npm v8+ (o yarn)  
+- Backend de MiCiudadGourmet corriendo y accesible (Laravel API)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Instalación
+
+1. Clonar este repositorio y entrar en la carpeta del frontend:
+
+   ```bash
+   git clone <URL-del-repositorio>
+   cd frontend
+   ```
+
+## Instalar dependencias
+
+    ```bash
+    npm run dev
+    ```
+
+## Configurar variables de entorno
+
+    ```bash
+    cp .env.example .env
+    ```
+## Uso
+
+    ```bash
+    npm run dev
+    ```
