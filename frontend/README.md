@@ -1,6 +1,6 @@
 # MiCiudadGourmet - Frontend React
 
-Frontend del proyecto **MiCiudadGourmet**, desarrollado en React, que consume las APIs del backend Laravel para ofrecer una experiencia completa en la gestión y visualización de restaurantes, categorías, reseñas y favoritos.
+Frontend del proyecto **MiCiudadGourmet**, desarrollado en React, que consume las APIs del backend Laravel.
 
 ---
 
