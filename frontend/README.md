@@ -34,5 +34,8 @@ Frontend del proyecto **MiCiudadGourmet**, desarrollado en React, que consume la
     ```
 ## Uso
 
+- Levantar el servidor en desarrollo
+
     ```bash
     npm run dev
+    ```
