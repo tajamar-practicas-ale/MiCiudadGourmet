@@ -21,13 +21,13 @@ Frontend del proyecto **MiCiudadGourmet**, desarrollado en React, que consume la
    cd frontend
    ```
 
-## Instalar dependencias
+2. Instalar dependencias
 
     ```bash
     npm run dev
     ```
 
-## Configurar variables de entorno
+3. Configurar variables de entorno
 
     ```bash
     cp .env.example .env
@@ -36,4 +36,3 @@ Frontend del proyecto **MiCiudadGourmet**, desarrollado en React, que consume la
 
     ```bash
     npm run dev
-    ```
